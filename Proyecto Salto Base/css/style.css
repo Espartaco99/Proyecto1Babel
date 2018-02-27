@@ -1,0 +1,22 @@
+*,*::before,*::after,*:before,*:after{
+    box-sizing:border-box;
+}
+h1{
+    display: inline-block; 
+}
+.logo{
+    display: inline-block;
+}
+header>nav{
+    display: inline-block;
+}
+nav ul{
+    list-style:none;
+    text-align: left;
+}
+nav>ul{
+    display: none
+}
+div>nav{
+   display: none
+}
