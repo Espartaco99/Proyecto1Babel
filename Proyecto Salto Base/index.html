@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="shortcut icon" href="./img/Logo_Salto_Base.ico">
+    <link rel="shortcut icon" href="./Logo_Salto_Base.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,39 +10,40 @@
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="import" href="./templates/about.html" title="about">
     <link rel="import" href="./templates/home.html" title="home">
+    <link rel="import" href="./templates/centros.html" title="centros">
+    <link rel="import" href="./templates/competiciones.html" title="competiciones">
+    <link rel="import" href="./templates/historia.html" title="historia">
     <script src = "./app/app.js" type="module" ></script>
 </head>
 <body>
     
     <div class="container">
         <header>
-<a href="#"><img src="./img/Logo Salto Base.jpg" alt="logo"></a>
+            <a href="#"><img src="./img/Logo Salto Base.jpg" alt="Logo Salto Base"></a>
             <h1>Salto Base</h1>
-            <nav id="menu_movil" >
-                    <span class ="fa fa-bars"></span>
+            <button id="botonMenu"><span class ="fa fa-bars b">A</span></button>
+            <nav id="menu_movil">    
                 <ul>
-                    <li><a href="#" id="home">Inicio</a></li>
-                    <li><a href="#">Centros</a></li>
-                    <li><a href="#">Historia</a></li>
-                    <li><a href="#">Competiciones</a></li>
-                    <li><a href="#" id="about">About</a></li>
+                    <li><a href="#" title="home">Inicio</a></li>
+                    <li><a href="#" title="centros">Centros</a></li>
+                    <li><a href="#" title="historia">Historia</a></li>
+                    <li><a href="#" title="competiciones">Competiciones</a></li>
+                    <li><a href="#" title="about">About</a></li>
                 </ul>
-                </nav>
+            </nav>
         </header>
         <nav id="menu_escritorio">
             <ul>
-                <li><a href="#" id="home">Inicio</a></li>
-                <li><a href="#">Centros</a></li>
-                <li><a href="#">Historia</a></li>
-                <li><a href="#">Competiciones</a></li>
-                <li><a href="#" id="about">About</a></li>
-            </ul>
-            </nav>
-            <main></main>
-            <article>    
-            </article>
+                <li><a href="#" title="home">Inicio</a></li>
+                <li><a href="#" title="centros">Centros</a></li>
+                <li><a href="#" title="historia">Historia</a></li>
+                <li><a href="#" title="competiciones">Competiciones</a></li>
+                <li><a href="#" title="about">About</a></li>
+            </ul>    
+        </nav>
+        <main></main>
         <footer>
-            <address></address>
+            <div>Hecho por Jesús Perucha y Diego Garzón</div>
         </footer>
     </div>
 </body>

@@ -19,16 +19,15 @@ export class Main {
         this._cargarTemplate('home')
     }
     menuItems(oEv){
-      
-        this._cargarTemplate(oEv.target.id)
+        this._cargarTemplate(oEv.target.title)
         oEv.preventDefault()
-          }
+    }
     _cargarTemplate(id){
         console.log(this.vista.oImports)
         console.log(id)
         const IMPORT = this.vista.oImports[id]
         console.log(IMPORT)
-        const ELEM = IMPORT.querySelector(`#${id}`)
+        const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
     }
 }
