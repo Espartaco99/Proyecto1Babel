@@ -1,0 +1,10 @@
+
+
+/*Reseteo de contenido para que el padding vaya calculado
+y solo haya que poner medidas a los margenes*/
+*, *::before, *::after, *:before, *:after{
+    /* Muy importante usar esta propiedad porque incluye los 
+    el padding y los bordes al hacer width y height, asi 
+    podemos ponerla en porcentaje y que quede bien */
+    box-sizing: border-box;
+}

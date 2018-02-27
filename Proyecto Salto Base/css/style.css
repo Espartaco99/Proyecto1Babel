@@ -1,0 +1,10 @@
+@import "./reset.css";
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header img{
+    width: 128px;
+    height: 100px;
+}
