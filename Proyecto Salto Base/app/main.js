@@ -43,6 +43,13 @@ export class Main {
 document.querySelector("#botonMenu").addEventListener("click", desplegarMenu, false)
 
 function desplegarMenu() {
-    console.log(document.querySelector("#menu_movil").style.display)
-    document.querySelector("#menu_movil").style.display = flex;
+    document.querySelector("#menu_movil").classList.toggle("oculto")
+    /* if(document.querySelector("#menu_movil").classList !== null && document.querySelector("#menu_movil").classList.contains("oculto")){
+        document.querySelector("#menu_movil").classList.remove("oculto")
+    }
+    else {
+        document.querySelector("#menu_movil").classList.add("oculto")
+    } */
+    /* document.querySelector(".a").style.visibility = visible;
+    console.log(document.querySelector(".a").style) */
 }
