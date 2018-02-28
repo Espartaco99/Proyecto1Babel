@@ -38,3 +38,8 @@ function desplegarMenu() {
     console.log(document.querySelector("#menu_movil").style.display)
     document.querySelector("#menu_movil").style.display = flex;
 }
+document.getElementById("linkAutores").addEventListener("click",ocultarMostrar,false)
+
+function ocultarMostrar(){
+    document.getElementById("autores").style.visibility="collapse"
+}

@@ -1,4 +1,51 @@
 <template title='about'>
-    <h2>about</h2>
+        <link rel="stylesheet" href="./css/style_about.css">
+        
+    <h2>About</h2>
+    <div id="autores_container">
+<article class="autor">
+    <section class="cv">
+        <p><strong> Nombre:</strong> Diego Garzon</p>
+        <p><strong>de nacimiento:</strong>  17 de Febrero de 1993</p>
+        <p><strong>Estudios:</strong> Graduado en ingeniería informatica por la Universidad Carlos III de Madrid. Estudiando Máster en desarrollo de aplicaciones y servicios moviles por la Universidad Politécnica de Madrida</p>
+        <p><strong>Aficiones:</strong> Salto Base, paracaidismo, y fan absoluto e incondicional del helado</p>
+    </section>
+    <img src="./img/image_about_autor1.jpg" alt="Autor 1, Diego Garzon">
+</article>
+<article class="autor"></article>
+    <section class="cv">
+        <p><strong>Nombre:</strong> Jesús Perucha</p>
+        <p><strong>Fecha de nacimiento:</strong> 30 de Junio de 1995</p>
+        <p><strong>Estudios:</strong> Estudiando Grado de ingeniería del software en la Universidad Complutense de Madrid</p>
+        <p><strong>Aficiones:</strong> Salto Base, curling y amante de los cachorritos</p>
+    </section>
+    <img src="./img/image_about_autor2.jpg" alt="Autor 1, Jesús Percucha">
+</article>
 
+</div>
+<a href="#" id="linkAutores">Autores</a>/<a href="#" id="linkFormulario">Contacta con nosotros</a>
+
+<div id="formulario">
+        <fieldset>
+                <legend>Contacta con nosotros</legend>
+                <label for="nombre">Nombre: <input id ="nombre"type="text" name="nombre" placeholder="Introduce tu nombre"></label>
+                <label for="email">Email:<input id="email" name="email" type="email" placeholder="Introduce tu email"></label>
+                <label>¿Cuanta experiencia tienes en deportes de riesgo?</label> 
+                <label for="radio_poco"><input type="radio" id="radio_poco" name="experiencia">Poco</label>
+                <label for="radio_normal"><input type="radio" id="radio_normal" name="experiencia">Normal</label> 
+                <label for="radio_mucho"><input type="radio" id="radio_mucho" name="experiencia">Mucho</label>
+                <label for="checkbox"><input type="checkbox" name="noticias" id="checkbox">Deseo recibir noticias y oportunidad sobre salto base</label>  
+                <label>Envianos tu opinión:</label>
+                <textarea id="coment" name="coment" placeholder="Escriba los comentarios que consideres oprtunos"></textarea>           
+                <button type="reset">Borrar</button>
+                <button type="submit">Enviar</button>
+            </fieldset>
+</div>
+<div id="datosEnviados">
+        <label id="nombreDatos">Nombre:</label>
+        <label id="emailDatos">Email:</label>
+        <label id="experienciaDatos">Experiencia en deportes de riesgo</label> 
+        <label id="checkboxDatos">Deseo recibir noticias y oportunidad sobre salto base:</label>  
+        <label id="opinionDatos">Envianos tu opinión:</label>
+</div>
 </template>
