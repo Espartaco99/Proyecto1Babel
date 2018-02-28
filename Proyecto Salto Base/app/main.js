@@ -31,3 +31,10 @@ export class Main {
         this.vista.eMain.innerHTML = ELEM.innerHTML
     }
 }
+
+document.querySelector("#botonMenu").addEventListener("click", desplegarMenu, false)
+
+function desplegarMenu() {
+    console.log(document.querySelector("#menu_movil").style.display)
+    document.querySelector("#menu_movil").style.display = flex;
+}

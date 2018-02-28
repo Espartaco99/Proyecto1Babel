@@ -10,16 +10,32 @@ header img{
     width: 128px;
     height: 100px;
 }
-nav ul{
-    list-style:none;
-    text-align: left;
-    visibility: visible
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
 }
+li{
+    border-collapse: none;
+    border-style: ridge;
+    border-color: goldenrod;
+    
+}
+li a{
+    text-decoration-line: none; 
+    background-color: #333;
+    color: #fff;
+    font-size: 2rem;
+}
+
 header>nav{
-    /* display: none; */
+    visibility: hidden;
+    
 }
 div>nav{
-   visibility: hidden;
+    visibility: visible;
+    background-color: grey;
 }
 .container{
     margin-left: 5%;
