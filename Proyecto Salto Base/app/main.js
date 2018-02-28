@@ -16,19 +16,27 @@ export class Main {
         this.vista.aImports.forEach(elem=>{
             this.vista.oImports[elem.title]=elem.import
         })
-        this._cargarTemplate('home')
+       
+        const ABOUT= this.vista.oImports['about']
+        const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
+        ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
+        ABOUTELEM.content.querySelector('#formulario').style.display='none'
+        ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
+        this._cargarTemplate('about')
     }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
         oEv.preventDefault()
     }
     _cargarTemplate(id){
-        console.log(this.vista.oImports)
-        console.log(id)
         const IMPORT = this.vista.oImports[id]
-        console.log(IMPORT)
         const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
+    }
+    ocultarMostrar(oEV){
+        console.log('HOLA ABOUT')
+        oEv.preventDefault()
+        document.getElementById("autores_container").style.visibility="collapse"
     }
 }
 
@@ -37,9 +45,4 @@ document.querySelector("#botonMenu").addEventListener("click", desplegarMenu, fa
 function desplegarMenu() {
     console.log(document.querySelector("#menu_movil").style.display)
     document.querySelector("#menu_movil").style.display = flex;
-}
-document.getElementById("linkAutores").addEventListener("click",ocultarMostrar,false)
-
-function ocultarMostrar(){
-    document.getElementById("autores").style.visibility="collapse"
 }
