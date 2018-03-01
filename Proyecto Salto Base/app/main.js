@@ -16,8 +16,6 @@ export class Main {
         this.vista.aImports.forEach(elem=>{
             this.vista.oImports[elem.title]=elem.import
         })
-            //   ABOUTELEM.content.querySelector('#formulario').style.display='none'
-      //  ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
         this._cargarTemplate('home')
             }
     menuItems(oEv){
@@ -29,11 +27,6 @@ export class Main {
         const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
         if(id === 'about')this.listenersAbout()
-       /*  const ABOUT= this.vista.oImports['about']
-        const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
-        ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
-        ABOUTELEM.addEventListener('DOMContentLoaded',this.listenersAbout.bind(this),false)
- */
         
     }
     ocultarMostrar(oEV){
@@ -62,13 +55,17 @@ export class Main {
          oEv.preventDefault()            
      }
      enviarDatos(oEv){
-         oEv.preventDefault()
+        //var nRe = RegExp('(a-zA-Z)')
+        
          var nombre =   document.getElementById("nombre").value;
          var email =  document.getElementById("email").value;;
          var experienciaDatos = document.querySelectorAll("experiencia").value;;
          var checkbox = document.getElementById("checkbox").value;;
          var opinionDatos = document.getElementById("coment").value;
-         console.log(nombre)
+         if(nombre.validity.valid)
+         if(email.validity.valid)
+         if(experienciaDatos.validity.valid)
+         oEv.preventDefault()
          document.getElementById("datosEnviados").classList.toggle('oculto')
          document.getElementById("formulario").classList.toggle('oculto')
          document.getElementById("nombreDatos").innerHTML+=` ${nombre}`
@@ -76,6 +73,7 @@ export class Main {
          document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
+         
      }
 }
 
