@@ -22,38 +22,44 @@ img{
     height:100%;
 }
 strong{
-   font-weight: 1000;
+   font-weight: bold;
 }
 legend{
-    font-weight: 1000;
+    font-weight: bold;
     font-size: 1.5rem;
 }
 div>label{
-    font-weight: 1000;
+    font-weight: bold;
 }
 .desactivo{
     color:gray;
 }
 .center{
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 1%;
 }
-label{
-    display: block;
+form ul{
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
 }
-textarea{
-    display: block;
+form ul li {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
-button{
-    display: inline-block;
+li input{
+    margin-left: 1rem;
 }
-button[type="reset"]{
-    float: right;
-    margin-right: 30%
+li textarea{
+    height: 100%;
+    width: 100%;
 }
-button[type="submit"]{
-    float: left;
-    margin-left:30%
+div button:nth-of-type(2){
+    margin-left: 5%;
 }
 
 @media screen and (min-width: 580px){
@@ -62,7 +68,6 @@ button[type="submit"]{
         width: 100%;
         float:left;  
     }
-    
     section{
         display:inline-block;
         width:60%
