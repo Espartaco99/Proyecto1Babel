@@ -39,7 +39,7 @@ export class Main {
     ocultarMostrar(oEV){
         console.log('HOLA ABOUT')
         oEv.preventDefault()
-        document.getElementById("autores_container").style.visibility="collapse"
+        //document.getElementById("autores_container").style.visibility="collapse"
     }
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
@@ -51,6 +51,7 @@ export class Main {
          document.getElementById("linkAutores").classList.toggle('desactivo')
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
+
          document.getElementById("autores_container").classList.toggle("oculto")
          document.querySelector("#autores").classList.toggle("oculto")
          document.querySelector("#contacta").classList.toggle("oculto")

@@ -31,21 +31,20 @@
 
     <div id="formulario" class="oculto">
             <form name="form_1" id="form_1" method="post" action="http:\\localhost">
-            <fieldset>
+                <ul>
                     <legend>Contacta con nosotros</legend>
-                    <label for="nombre">Nombre: <input id ="nombre"type="text" name="nombre" placeholder="Introduce tu nombre"></label>
-                    <label for="email">Email:<input id="email" name="email" type="email" placeholder="Introduce tu email"></label>
-                    <label>¿Cuanta experiencia tienes en deportes de riesgo?</label> 
-                    <label for="radio_poco"><input type="radio" id="radio_poco" name="experiencia">Poco</label>
-                    <label for="radio_normal"><input type="radio" id="radio_normal" name="experiencia">Normal</label> 
-                    <label for="radio_mucho"><input type="radio" id="radio_mucho" name="experiencia">Mucho</label>
-                    <label>Envianos tu opinión:</label>
-                    <textarea id="coment" name="coment" placeholder="Escriba los comentarios que consideres oprtunos"></textarea>    
-                    <label for="checkbox"><input type="checkbox" name="noticias" id="checkbox">Deseo recibir noticias y oportunidades sobre salto base.</label>         
-                    <button type="reset">Borrar</button>
-                    <button id="submit" type="submit">Enviar</button>
-                </fieldset>
-                </form>
+                    <li><label for="nombre">Nombre: <input id ="nombre"type="text" name="nombre" placeholder="Introduce tu nombre"></label></li>
+                    <li><label for="email">Email:<input id="email" name="email" type="email" placeholder="Introduce tu email"></label></li>
+                    <li><label>¿Cuanta experiencia tienes en deportes de riesgo?</label></li>
+                    <li><label for="radio_poco"><input type="radio" id="radio_poco" name="experiencia">Poco</label></li>
+                    <li><label for="radio_normal"><input type="radio" id="radio_normal" name="experiencia">Normal</label> </li>
+                    <li><label for="radio_mucho"><input type="radio" id="radio_mucho" name="experiencia">Mucho</label></li>
+                    <li><label for="coment">Envianos tu opinión:<textarea id="coment" name="coment" placeholder="Escriba los comentarios que consideres oprtunos"></textarea></label></li>
+                    <li><label for="checkbox"><input type="checkbox" name="noticias" id="checkbox">Deseo recibir noticias y oportunidades sobre salto base.</label></li>         
+                    <li><button type="reset">Borrar</button></li>
+                    <li><button id="submit" type="submit">Enviar</button></li>
+                </ul>
+            </form>
     </div>
     <div id="datosEnviados" class="oculto">
             <label id="nombreDatos">Nombre:</label>

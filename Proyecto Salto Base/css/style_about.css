@@ -22,39 +22,25 @@ img{
     height:100%;
 }
 strong{
-   font-weight: 1000;
+   font-weight: bold;
 }
 legend{
-    font-weight: 1000;
+    font-weight: bold;
     font-size: 1.5rem;
 }
 div>label{
-    font-weight: 1000;
+    font-weight: bold;
 }
 .desactivo{
     color:gray;
 }
 .center{
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 1%;
 }
-label{
-    display: block;
-}
-textarea{
-    display: block;
-}
-button{
-    display: inline-block;
-}
-button[type="reset"]{
-    float: right;
-    margin-right: 30%
-}
-button[type="submit"]{
-    float: left;
-    margin-left:30%
-}
+
 
 @media screen and (min-width: 580px){
    body>div{
@@ -65,7 +51,6 @@ button[type="submit"]{
         float:left;
        
     }
-    
     section{
         display:inline-block;
         width:60%
