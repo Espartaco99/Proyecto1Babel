@@ -1,4 +1,3 @@
-@import "./media.css";
 @import "./reset.css";
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 html{
@@ -48,6 +47,10 @@ header > button{
     font-size: 3rem;
     width: 50px;
     margin-left: 3%;
+}
+h2{
+    font-size: 3rem;
+    font-weight: bold;
 }
 ul{
     list-style: none;
@@ -100,6 +103,17 @@ footer {
     margin-bottom: 1%;
     text-align: center;
 }
+@media screen and (max-width: 700px){
+    .flex{
+        display:none;
+    }
+}
+@media screen and (min-width: 700px){
+    .botonMenu{
+        display:none;
+    }
+}
+
 @media screen and (max-width: 500px){
     header > button{
         width: auto;
