@@ -24,11 +24,12 @@ header{
     justify-content: space-between;
     margin-left: -6%;
     margin-right: -6%;
-    padding: 3%;
+    padding: 15px;
     margin-bottom: 3%;
     background-color: white;
     height: 120px;
 }
+
 header img{
     margin-bottom: auto;
     margin-top: auto;
@@ -40,6 +41,13 @@ header h1{
     text-align: center;
     font-size: 4rem;
     margin: auto;
+}
+header > button{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3rem;
+    width: 50px;
+    margin-left: 3%;
 }
 ul{
     list-style: none;
@@ -78,12 +86,9 @@ footer {
     color: #fff;
     font-size: 1rem;
     margin-top: 3%;
+    text-align: center;
 }
-header > button{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 2rem;
-}
+
 .oculto{
     display:none !important;
 }
@@ -94,4 +99,54 @@ header > button{
 .block>li{
     margin-bottom: 1%;
     text-align: center;
+}
+@media screen and (max-width: 500px){
+    header > button{
+        width: auto;
+        font-size: 2rem;
+    }
+    header a{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    header img{
+        max-width: 50px;
+        max-height: 50px;
+    }
+    header h1{
+        font-size: 3rem;
+    }
+    header{
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    header img{
+        max-width: 50px;
+        max-height: 50px;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    header{
+        height: 80px;
+    }
+}
+@media screen and (max-width: 280px){
+    header > button{
+        width: auto;
+        font-size: 1rem;
+    }
+    header img{
+        max-width: 25px;
+        max-height: 25px;
+    }
+    header h1{
+        font-size: 1rem;
+    }
+    header{
+        height: 40px;
+        padding: 8px;
+    }
 }
