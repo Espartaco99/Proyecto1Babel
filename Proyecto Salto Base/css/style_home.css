@@ -6,12 +6,21 @@ aside{
     border-radius: 5px;
     border: solid 1px blue;
     padding:2%;
-   
 }
-aside div{
-   display: flex;
+
+aside h4 {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+aside>div{
+    display: flex;
     justify-content: center;
-    margin: 1%;
+    margin-bottom: 1%;
+}
+aside>p:nth-of-type(2){
+    margin-bottom: 0px;
 }
 
 figure{
@@ -36,7 +45,12 @@ img{
     
     section{
         display:inline-block;
-        width:55%
+        width:60%
+    }
+    figure{ 
+        float: right;
+        width:40%;
+        display:inline-block
     }
     figure{    
         width:45%;
