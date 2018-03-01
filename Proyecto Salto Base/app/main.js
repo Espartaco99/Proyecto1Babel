@@ -16,8 +16,7 @@ export class Main {
         this.vista.aImports.forEach(elem=>{
             this.vista.oImports[elem.title]=elem.import
         })
-            //   ABOUTELEM.content.querySelector('#formulario').style.display='none'
-      //  ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
+
         this._cargarTemplate('home')
             }
     menuItems(oEv){
@@ -29,22 +28,16 @@ export class Main {
         const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
         if(id === 'about')this.listenersAbout()
-       /*  const ABOUT= this.vista.oImports['about']
-        const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
-        ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
-        ABOUTELEM.addEventListener('DOMContentLoaded',this.listenersAbout.bind(this),false)
- */
         
     }
     ocultarMostrar(oEV){
         console.log('HOLA ABOUT')
         oEv.preventDefault()
-        //document.getElementById("autores_container").style.visibility="collapse"
     }
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
-        document.getElementById("submit").addEventListener("click",this.enviarDatos.bind(this),false)
+        document.getElementById("submit").addEventListener("submit",this.enviarDatos.bind(this),false)
      
     }                
     desplegar(oEv) {
@@ -62,8 +55,7 @@ export class Main {
          oEv.preventDefault()            
      }
      enviarDatos(oEv){
-         oEv.preventDefault()
-         var nombre =   document.getElementById("nombre").value;
+         var nombre = document.getElementById("nombre").value;
          var email =  document.getElementById("email").value;;
          var experienciaDatos = document.querySelectorAll("experiencia").value;;
          var checkbox = document.getElementById("checkbox").value;;
@@ -76,6 +68,7 @@ export class Main {
          document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
+         oEv.preventDefault();
      }
 }
 
