@@ -6,21 +6,12 @@ aside{
     border-radius: 5px;
     border: solid 1px blue;
     padding:2%;
+   
 }
-
-aside h4 {
-    font-size: 1.5rem;
-    margin: auto;
-    margin-bottom: 10px;
-}
-
-aside>div{
-    display: flex;
+aside div{
+   display: flex;
     justify-content: center;
-    margin-bottom: 1%;
-}
-aside>p:nth-of-type(2){
-    margin-bottom: 0px;
+    margin: 1%;
 }
 
 figure{
@@ -32,52 +23,60 @@ img{
     width: 100%;
     height:100%;
 }
+.cambiar{
+    display:block;
+}
+ 
+   
 @media screen and (min-width: 700px){
     article{
         width: 100%;
       
     }
-    .articulo{
-        display:flex;
-        justify-content: flex-start;
-        width: 100%
-    }
+   
     
     section{
-        display:inline-block;
-        width:60%
-    }
-    figure{ 
-        float: right;
-        width:40%;
-        display:inline-block
+       
+        width:55%
     }
     figure{    
         width:45%;
+        margin-top:10%
       
     }
-    .left{
-        display: block;
-        float:left
-        
+    .articulo{
+        display:inline-block;       
+        width: 100%
+    }
+    .left{ 
+    float: left;
     }
     .right{
-        float:right;
-        display: block;
+      float: right;
     }
 }
 @media screen and (min-width: 1100px){
-    .template_container{
-        display: block
+    figure{    
+        margin-top:0%;
+        padding:5%
+      
     }
+
     aside{
         display:block;
-        width: 40%;
+        width: 30%;
         float: right;
         
     }
+    aside iframe{
+        width: 100%;
+
+    }
     .template_container article{
         display: block;
-        width: 60%;
+        width: 70%;
+    }
+    .template_container figure{
+        margin-top:10%;
     }
 }
