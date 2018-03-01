@@ -18,7 +18,7 @@ export class Main {
         })
             //   ABOUTELEM.content.querySelector('#formulario').style.display='none'
       //  ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
-        this._cargarTemplate('about')
+        this._cargarTemplate('home')
             }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
