@@ -66,8 +66,7 @@ div button:nth-of-type(2){
    
     article{
         width: 100%;
-        float:left;
-       
+        float:left;  
     }
     section{
         display:inline-block;

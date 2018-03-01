@@ -35,6 +35,9 @@ header img{
     max-width: 100px;
     width: auto;
 }
+header a{
+    margin-left:3%
+}
 header h1{
     white-space: nowrap;
     text-align: center;
@@ -51,6 +54,8 @@ header > button{
 h2{
     font-size: 3rem;
     font-weight: bold;
+    margin-top:10px;
+    margin-bot:10px;
 }
 h3 {
     font-size: 2rem;
@@ -126,17 +131,42 @@ img {
     text-align: center;
 }
 @media screen and (max-width: 700px){
+    h2{
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+    h3{
+        font-size: 2.25rem;
+        font-weight: 400;
+    }
     .flex{
         display:none;
     }
 }
 @media screen and (min-width: 700px){
+    h2{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    h3{
+        font-size: 2.75rem;
+        font-weight: 500;
+    }
     .botonMenu{
         display:none;
     }
 }
 
 @media screen and (max-width: 500px){
+    h2{
+        font-size: 2rem;
+        font-weight: 300;
+
+    }
+    h3{
+        font-size: 1.75rem;
+        font-weight: 300;
+    }
     header > button{
         width: auto;
         font-size: 2rem;
@@ -158,6 +188,15 @@ img {
 }
 
 @media screen and (max-width: 350px){
+    h3{
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+    h2{
+        font-size: 1.75rem;
+        font-weight: 200;
+
+    }
     header img{
         max-width: 50px;
         max-height: 50px;
@@ -170,6 +209,14 @@ img {
     }
 }
 @media screen and (max-width: 280px){
+    h2{
+        font-size: 1.25rem;
+        font-weight: 100;
+    }
+    h3{
+        font-size: 1rem;
+        font-weight: 100;
+    }
     header > button{
         width: auto;
         font-size: 1rem;
