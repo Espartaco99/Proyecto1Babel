@@ -57,13 +57,10 @@ button[type="submit"]{
 }
 
 @media screen and (min-width: 580px){
-   body>div{
-        display:inline-block
-    }
+   
     article{
         width: 100%;
-        float:left;
-       
+        float:left;  
     }
     
     section{
