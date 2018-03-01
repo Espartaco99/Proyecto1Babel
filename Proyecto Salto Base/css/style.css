@@ -1,7 +1,11 @@
 @import "./media.css";
 @import "./reset.css";
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+html{
+    font-family: "Questrial", sans-serif;
+}
 
-html:after {
+ html:after {
     content: "";
     position: fixed;
     top: 0;
@@ -10,22 +14,40 @@ html:after {
     height: 100%;
     background-color: lightblue;
     background-image: url(../img/bg11.jpg);
-    background-size: auto;
     opacity: 0.2;
     overflow:auto;
     z-index: -1;
-}
+    background-repeat: no-repeat;
+} 
 header{
     display: flex;
     justify-content: space-between;
-    margin-top: 3%;
+    margin-left: -6%;
+    margin-right: -6%;
+    padding: 15px;
+    margin-bottom: 3%;
+    background-color: white;
+    height: 120px;
 }
+
 header img{
-    width: 128px;
-    height: 100px;
+    margin-bottom: auto;
+    margin-top: auto;
+    max-width: 100px;
+    width: auto;
 }
 header h1{
     white-space: nowrap;
+    text-align: center;
+    font-size: 4rem;
+    margin: auto;
+}
+header > button{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3rem;
+    width: 50px;
+    margin-left: 3%;
 }
 ul{
     list-style: none;
@@ -40,9 +62,14 @@ li a{
     text-decoration-line: none; 
     color: #fff;
     font-size: 2rem;
+    display: block;
 }
-li:hover{
+li a:hover{
     transform: scale(1.2);
+    background-color: #333;
+}
+.block>li>a:hover{
+    transform: scale(1.1);
     background-color: #333;
 }
 div>nav{
@@ -53,17 +80,15 @@ div>nav{
     margin-left: 5%;
     margin-right: 5%;
 }
+
 footer {
     background-color: #333;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
+    margin-top: 3%;
+    text-align: center;
 }
 
-header > button{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 2rem;
-}
 .oculto{
     display:none !important;
 }
@@ -75,7 +100,53 @@ header > button{
     margin-bottom: 1%;
     text-align: center;
 }
-.block>li:hover{
-    transform: scale(1.1);
-    background-color: #333;
+@media screen and (max-width: 500px){
+    header > button{
+        width: auto;
+        font-size: 2rem;
+    }
+    header a{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    header img{
+        max-width: 50px;
+        max-height: 50px;
+    }
+    header h1{
+        font-size: 3rem;
+    }
+    header{
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    header img{
+        max-width: 50px;
+        max-height: 50px;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    header{
+        height: 80px;
+    }
+}
+@media screen and (max-width: 280px){
+    header > button{
+        width: auto;
+        font-size: 1rem;
+    }
+    header img{
+        max-width: 25px;
+        max-height: 25px;
+    }
+    header h1{
+        font-size: 1rem;
+    }
+    header{
+        height: 40px;
+        padding: 8px;
+    }
 }
