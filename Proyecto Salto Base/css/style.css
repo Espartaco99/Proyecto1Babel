@@ -52,6 +52,12 @@ h2{
     font-size: 3rem;
     font-weight: bold;
 }
+h3 {
+    font-size: 2rem;
+}
+p {
+    margin-bottom: 15px;
+}
 ul{
     list-style: none;
     padding: 1%;

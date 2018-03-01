@@ -28,7 +28,7 @@ export class Main {
         const IMPORT = this.vista.oImports[id]
         const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
-        if(id == 'about')this.listenersAbout()
+        if(id === 'about')this.listenersAbout()
        /*  const ABOUT= this.vista.oImports['about']
         const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
         ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
@@ -52,10 +52,12 @@ export class Main {
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
          document.getElementById("autores_container").classList.toggle("oculto")
-         if (!document.getElementById("datosEnviados").classList.contains('oculto')){
+         document.querySelector("#autores").classList.toggle("oculto")
+         document.querySelector("#contacta").classList.toggle("oculto")
+          if (!document.getElementById("datosEnviados").classList.contains('oculto')){ 
              document.getElementById("datosEnviados").classList.toggle('oculto')
              document.getElementById("formulario").classList.toggle('oculto')       
-         }        
+          }        
          oEv.preventDefault()            
      }
      enviarDatos(oEv){
