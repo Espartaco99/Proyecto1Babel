@@ -16,14 +16,10 @@ export class Main {
         this.vista.aImports.forEach(elem=>{
             this.vista.oImports[elem.title]=elem.import
         })
-       
-        const ABOUT= this.vista.oImports['about']
-        const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
-        ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
-        ABOUTELEM.content.querySelector('#formulario').style.display='none'
-        ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
+            //   ABOUTELEM.content.querySelector('#formulario').style.display='none'
+      //  ABOUTELEM.content.querySelector('#datosEnviados').style.display='none'
         this._cargarTemplate('about')
-    }
+            }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
         oEv.preventDefault()
@@ -32,15 +28,56 @@ export class Main {
         const IMPORT = this.vista.oImports[id]
         const ELEM = IMPORT.querySelector(`[title=${id}]`)
         this.vista.eMain.innerHTML = ELEM.innerHTML
+        if(id == 'about')this.listenersAbout()
+       /*  const ABOUT= this.vista.oImports['about']
+        const ABOUTELEM = ABOUT.querySelector(`[title='about']`)
+        ABOUTELEM.content.querySelector('#linkAutores').addEventListener('click',this.ocultarMostrar.bind(this),false)
+        ABOUTELEM.addEventListener('DOMContentLoaded',this.listenersAbout.bind(this),false)
+ */
+        
     }
     ocultarMostrar(oEV){
         console.log('HOLA ABOUT')
         oEv.preventDefault()
         document.getElementById("autores_container").style.visibility="collapse"
     }
+    listenersAbout(){
+        document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
+        document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
+        document.getElementById("submit").addEventListener("click",this.enviarDatos.bind(this),false)
+     
+    }                
+    desplegar(oEv) {
+         document.getElementById("linkAutores").classList.toggle('desactivo')
+         document.getElementById("linkFormulario").classList.toggle('desactivo')
+         document.getElementById("formulario").classList.toggle("oculto")
+         document.getElementById("autores_container").classList.toggle("oculto")
+         if (!document.getElementById("datosEnviados").classList.contains('oculto')){
+             document.getElementById("datosEnviados").classList.toggle('oculto')
+             document.getElementById("formulario").classList.toggle('oculto')       
+         }        
+         oEv.preventDefault()            
+     }
+     enviarDatos(oEv){
+         oEv.preventDefault()
+         var nombre =   document.getElementById("nombre").value;
+         var email =  document.getElementById("email").value;;
+         var experienciaDatos = document.querySelectorAll("experiencia").value;;
+         var checkbox = document.getElementById("checkbox").value;;
+         var opinionDatos = document.getElementById("coment").value;
+         console.log(nombre)
+         document.getElementById("datosEnviados").classList.toggle('oculto')
+         document.getElementById("formulario").classList.toggle('oculto')
+         document.getElementById("nombreDatos").innerHTML+=` ${nombre}`
+         document.getElementById("emailDatos").innerHTML+=` ${email}`
+         document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
+         document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
+         document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
+     }
 }
 
 document.querySelector("#botonMenu").addEventListener("click", desplegarMenu, false)
+//document.querySelector("#botonMenu").addEventListener('blur', desplegarMenu, false)
 
 function desplegarMenu() {
     document.querySelector("#menu_movil").classList.toggle("oculto")
