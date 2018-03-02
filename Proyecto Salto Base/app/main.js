@@ -10,6 +10,20 @@ export class Main {
             oImports: {},
             bMenu:  document.querySelector("#botonMenu")
         }
+        this.user = {
+            nombre: localStorage.getItem('nombre'),
+            email: localStorage.getItem('email'),
+            experiencia: localStorage.getItem('experiencia'),
+            opinion: localStorage.getItem('opinion'),
+            recbirNoticias:localStorage.getItem('recibirNoticias')
+        }
+        this.vistaDatosEnviados = {
+            nombre: document.querySelector('#nombreDatos'),
+            email: document.querySelector('#emailDatos'),
+            experiencia: document.querySelector('#experienciaDatos'),
+            opinion: document.querySelector('#opinionDatos'),
+            recbirNoticias: document.querySelector('#checkboxDatos')
+        }
         this.vista.aBtnsMenu.forEach(element => {
             element.addEventListener('click',this.menuItems.bind(this),false)
         });
@@ -19,6 +33,7 @@ export class Main {
         })
         this._cargarTemplate('home')
         this.vista.bMenu.addEventListener("click", () => this.desplegarMenu(), false)
+        
     }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
@@ -39,6 +54,7 @@ export class Main {
         console.log(document.getElementById("linkFormulario"))
         console.log(document.getElementById("submit"))
         console.log("Entre main js")
+        
      
     }                
     desplegar(oEv) {
@@ -54,51 +70,71 @@ export class Main {
           }        
          oEv.preventDefault()            
      }
-     enviarDatos(oEv){
-        //var nRe = RegExp('(a-zA-Z)')
-        var expregNombre = /[A-Za-z]*/;
-        var expregEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
-        var nombre = document.getElementById("nombre").value;
-        var email = document.getElementById("email").value;;
-        var aRadio = document.getElementsByName("radio");
-            for(var i=0; i < aRadio.length; i++) {
-                if (aRadio[i].checked) { 
-                     var experienciaDatos = aRadio[i].value;
-            }
-         }
-         var checkbox = document.getElementById("checkbox").checked ? "SI" : "NO";		
-         var opinionDatos = document.getElementById("coment").value;
-         var required = true
-         if(!expregNombre.test(nombre)){
-            document.getElementById("errorNombre").attributes
-             required = false
-         }
-         if(!expregEmail.test(email)){
-             console.log("email introducido")
-             required = false
-         }
-         if(!experienciaDatos){
-         }   console.log("experiencia introducido")
-         required = false
-         if(required){
-         localStorage.setItem("nombre",  nombre)
-         localStorage.setItem("email",  email)
-         localStorage.setItem("experiencia",  experienciaDatos)
-         localStorage.setItem("opinion",  opinionDatos)
-         localStorage.setItem("recibirNoticias",  checkbox)
 
-       
-         oEv.preventDefault()
-         document.getElementById("datosEnviados").classList.toggle('oculto')
+     enviarDatos(event){
+        event.preventDefault();
+         var nombre = document.getElementById("nombre").value;
+         var email = document.getElementById("email").value;
+         var aRadio = document.getElementsByName("radio");
+         for(var i=0; i < aRadio.length; i++) {
+             if (aRadio[i].checked) { 
+                  var experienciaDatos = aRadio[i].value;
+         }
+         }
+        var checkbox = document.getElementById("checkbox").value;;
+        var opinionDatos = document.getElementById("coment").value;
+        localStorage.setItem("nombre",  nombre)
+        localStorage.setItem("email",  email)
+        localStorage.setItem("experiencia",  experienciaDatos)
+        localStorage.setItem("opinion",  opinionDatos)
+        localStorage.setItem("recibirNoticias",  checkbox)
+        document.getElementById("datosEnviados").classList.toggle('oculto')
          document.getElementById("formulario").classList.toggle('oculto')
          document.getElementById("nombreDatos").innerHTML+=` ${nombre}`
          document.getElementById("emailDatos").innerHTML+=` ${email}`
          document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
-         }
+         
      }
      
+
+
+
+     _mostrarNombre () {
+        if(this.user.nombre) {
+           console.log(this.user.nombre)
+           this.vistaDatosEnviados.nombre.innerHTML =`${this.user.nombre}`
+           //this.vistaDatosEnviados.nombre.classList.add("rojo")
+        }
+    }
+
+   _mostrarTareas() {
+        if(this.aTareas.length) {
+           let lista;
+           lista = "<ul>"
+           this.aTareas.forEach(item=>lista+=`<li>${item}</li>`)
+           lista += "</ul>"
+           this.vista.tareas.innerHTML = lista
+        }
+    }
+
+   btnRegistrar() {
+       console.log(this.user.nombre)
+        this.user.nombre = this.vista.inNombre.value
+        localStorage.setItem("nombre",  this.user.nombre)
+        this._mostrarNombre()
+    }
+
+    btnAdd() {
+
+        this.tarea = this.vista.inTarea.value
+        this.aTareas.push( this.tarea)
+        localStorage.setItem("tareas", JSON.stringify(this.aTareas))
+        this._mostrarTareas()
+    }
+
+
 
      desplegarMenu() {
         document.querySelector("#menu_movil").classList.toggle("oculto")
