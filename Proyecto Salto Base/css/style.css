@@ -111,6 +111,7 @@ footer {
     text-align: start;
     float: left;
     width: 50%;
+    padding-top:5px;
     padding-left: 5%;
     display: block;
 }
