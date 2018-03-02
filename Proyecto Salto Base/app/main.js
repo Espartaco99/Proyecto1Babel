@@ -58,16 +58,17 @@ export class Main {
      
     }                
     desplegar(oEv) {
+        if (!document.getElementById("datosEnviados").classList.contains('oculto')){ 
+            document.getElementById("datosEnviados").classList.toggle('oculto')
+            document.getElementById("formulario").classList.toggle('oculto')       
+         }  else{
          document.getElementById("linkAutores").classList.toggle('desactivo')
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
          document.getElementById("autores_container").classList.toggle("oculto")
          document.querySelector("#autores").classList.toggle("oculto")
          document.querySelector("#contacta").classList.toggle("oculto")
-          if (!document.getElementById("datosEnviados").classList.contains('oculto')){ 
-             document.getElementById("datosEnviados").classList.toggle('oculto')
-             document.getElementById("formulario").classList.toggle('oculto')       
-          }        
+               }
          oEv.preventDefault()            
      }
 
@@ -90,11 +91,11 @@ export class Main {
         localStorage.setItem("recibirNoticias",  checkbox)
         document.getElementById("datosEnviados").classList.toggle('oculto')
          document.getElementById("formulario").classList.toggle('oculto')
-         document.getElementById("nombreDatos").innerHTML+=` ${nombre}`
-         document.getElementById("emailDatos").innerHTML+=` ${email}`
-         document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
-         document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
-         document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
+         document.getElementById("nombreDatos").innerHTML=` ${nombre}`
+         document.getElementById("emailDatos").innerHTML=` ${email}`
+         document.getElementById("experienciaDatos").innerHTML=` ${experienciaDatos}`
+         document.getElementById("opinionDatos").innerHTML=` ${opinionDatos}`
+         document.getElementById("checkboxDatos").innerHTML=` ${checkbox}`
          
      }
      
