@@ -17,13 +17,6 @@ export class Main {
             opinion: localStorage.getItem('opinion'),
             recbirNoticias:localStorage.getItem('recibirNoticias')
         }
-        this.vistaDatosEnviados = {
-            nombre: document.querySelector('#nombreDatos'),
-            email: document.querySelector('#emailDatos'),
-            experiencia: document.querySelector('#experienciaDatos'),
-            opinion: document.querySelector('#opinionDatos'),
-            recbirNoticias: document.querySelector('#checkboxDatos')
-        }
         this.vista.aBtnsMenu.forEach(element => {
             element.addEventListener('click',this.menuItems.bind(this),false)
         });
@@ -49,13 +42,7 @@ export class Main {
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
-        document.getElementById("form_1").addEventListener("submit",this.enviarDatos.bind(this),false)
-        console.log(document.getElementById("linkAutores"))
-        console.log(document.getElementById("linkFormulario"))
-        console.log(document.getElementById("submit"))
-        console.log("Entre main js")
-        
-     
+        document.getElementById("form_1").addEventListener("submit",this.enviarDatos.bind(this),false)  
     }                
     desplegar(oEv) {
         if (!document.getElementById("datosEnviados").classList.contains('oculto')){ 
@@ -66,8 +53,6 @@ export class Main {
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
          document.getElementById("autores_container").classList.toggle("oculto")
-         document.querySelector("#autores").classList.toggle("oculto")
-         document.querySelector("#contacta").classList.toggle("oculto")
                }
          oEv.preventDefault()            
      }
@@ -82,7 +67,7 @@ export class Main {
                   var experienciaDatos = aRadio[i].value;
          }
          }
-        var checkbox = document.getElementById("checkbox").checked ? "SI" : "NO";		
+        var checkbox = document.getElementById("checkbox").checked ? "Si" : "No";		
         var opinionDatos = document.getElementById("coment").value;
         localStorage.setItem("nombre",  nombre)
         localStorage.setItem("email",  email)
@@ -90,17 +75,13 @@ export class Main {
         localStorage.setItem("opinion",  opinionDatos)
         localStorage.setItem("recibirNoticias",  checkbox)
         document.getElementById("datosEnviados").classList.toggle('oculto')
-         document.getElementById("formulario").classList.toggle('oculto')
-         document.getElementById("nombreDatos").innerHTML=` ${nombre}`
-         document.getElementById("emailDatos").innerHTML=` ${email}`
-         document.getElementById("experienciaDatos").innerHTML=` ${experienciaDatos}`
-         document.getElementById("opinionDatos").innerHTML=` ${opinionDatos}`
-         document.getElementById("checkboxDatos").innerHTML=` ${checkbox}`
-         
+        document.getElementById("formulario").classList.toggle('oculto')
+        document.getElementById("nombreDatos").innerHTML=` ${nombre}`
+        document.getElementById("emailDatos").innerHTML=` ${email}`
+        document.getElementById("experienciaDatos").innerHTML=` ${experienciaDatos}`
+        document.getElementById("opinionDatos").innerHTML=` ${opinionDatos}`
+        document.getElementById("checkboxDatos").innerHTML=` ${checkbox}`
      }
-     
-
-
 
      _mostrarNombre () {
         if(this.user.nombre) {
@@ -128,14 +109,11 @@ export class Main {
     }
 
     btnAdd() {
-
         this.tarea = this.vista.inTarea.value
         this.aTareas.push( this.tarea)
         localStorage.setItem("tareas", JSON.stringify(this.aTareas))
         this._mostrarTareas()
     }
-
-
 
      desplegarMenu() {
         document.querySelector("#menu_movil").classList.toggle("oculto")
