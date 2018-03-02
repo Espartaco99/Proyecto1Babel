@@ -10,6 +10,20 @@ export class Main {
             oImports: {},
             bMenu:  document.querySelector("#botonMenu")
         }
+        this.user = {
+            nombre: localStorage.getItem('nombre'),
+            email: localStorage.getItem('email'),
+            experiencia: localStorage.getItem('experiencia'),
+            opinion: localStorage.getItem('opinion'),
+            recbirNoticias:localStorage.getItem('recibirNoticias')
+        }
+        this.vistaDatosEnviados = {
+            nombre: document.querySelector('#nombreDatos'),
+            email: document.querySelector('#emailDatos'),
+            experiencia: document.querySelector('#experienciaDatos'),
+            opinion: document.querySelector('#opinionDatos'),
+            recbirNoticias: document.querySelector('#checkboxDatos')
+        }
         this.vista.aBtnsMenu.forEach(element => {
             element.addEventListener('click',this.menuItems.bind(this),false)
         });
@@ -19,6 +33,7 @@ export class Main {
         })
         this._cargarTemplate('home')
         this.vista.bMenu.addEventListener("click", () => this.desplegarMenu(), false)
+        
     }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
@@ -31,18 +46,16 @@ export class Main {
         if(id === 'about')this.listenersAbout()
         
     }
-    ocultarMostrar(oEV){
-        console.log('HOLA ABOUT')
-        oEv.preventDefault()
-    }
+
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
-        document.getElementById("submit").addEventListener("submit",this.enviarDatos.bind(this),false)
+        document.getElementById("form_1").addEventListener("submit",this.enviarDatos.bind(this),false)
         console.log(document.getElementById("linkAutores"))
         console.log(document.getElementById("linkFormulario"))
         console.log(document.getElementById("submit"))
         console.log("Entre main js")
+        
      
     }                
     desplegar(oEv) {
@@ -59,18 +72,20 @@ export class Main {
           }        
          oEv.preventDefault()            
      }
-     enviarDatos(oEv){
+     enviarDatos(event){
+        event.preventDefault();
         //var nRe = RegExp('(a-zA-Z)')
+        console.log("Entre enviar datos")
         
          var nombre = document.getElementById("nombre").value;
-         var email = document.getElementById("email").value;;
+         localStorage.setItem("nombre", nombre)
+         var email = document.getElementById("email").value;
+         localStorage.setItem("email", email)
          var experienciaDatos = document.querySelectorAll("experiencia").value;;
          var checkbox = document.getElementById("checkbox").value;;
          var opinionDatos = document.getElementById("coment").value;
-         if(nombre.validity.valid)
-         if(email.validity.valid)
-         if(experienciaDatos.validity.valid)
-         oEv.preventDefault()
+         
+         
          document.getElementById("datosEnviados").classList.toggle('oculto')
          document.getElementById("formulario").classList.toggle('oculto')
          document.getElementById("nombreDatos").innerHTML+=` ${nombre}`
@@ -79,6 +94,43 @@ export class Main {
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
      }
+
+
+
+     _mostrarNombre () {
+        if(this.user.nombre) {
+           console.log(this.user.nombre)
+           this.vistaDatosEnviados.nombre.innerHTML =`${this.user.nombre}`
+           //this.vistaDatosEnviados.nombre.classList.add("rojo")
+        }
+    }
+
+   _mostrarTareas() {
+        if(this.aTareas.length) {
+           let lista;
+           lista = "<ul>"
+           this.aTareas.forEach(item=>lista+=`<li>${item}</li>`)
+           lista += "</ul>"
+           this.vista.tareas.innerHTML = lista
+        }
+    }
+
+   btnRegistrar() {
+       console.log(this.user.nombre)
+        this.user.nombre = this.vista.inNombre.value
+        localStorage.setItem("nombre",  this.user.nombre)
+        this._mostrarNombre()
+    }
+
+    btnAdd() {
+
+        this.tarea = this.vista.inTarea.value
+        this.aTareas.push( this.tarea)
+        localStorage.setItem("tareas", JSON.stringify(this.aTareas))
+        this._mostrarTareas()
+    }
+
+
 
      desplegarMenu() {
         document.querySelector("#menu_movil").classList.toggle("oculto")
