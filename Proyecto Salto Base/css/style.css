@@ -155,6 +155,10 @@ img {
     .botonMenu{
         display:none;
     }
+    .block{
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 500px){

@@ -7,7 +7,8 @@ export class Main {
             body : document.querySelector('body'),
             eMain : document.querySelector('main'),
             aImports: document.querySelectorAll('link[rel="import"]'),
-            oImports: {}
+            oImports: {},
+            bMenu:  document.querySelector("#botonMenu")
         }
         this.vista.aBtnsMenu.forEach(element => {
             element.addEventListener('click',this.menuItems.bind(this),false)
@@ -17,7 +18,8 @@ export class Main {
             this.vista.oImports[elem.title]=elem.import
         })
         this._cargarTemplate('home')
-            }
+        this.vista.bMenu.addEventListener("click", () => this.desplegarMenu(), false)
+    }
     menuItems(oEv){
         this._cargarTemplate(oEv.target.title)
         oEv.preventDefault()
@@ -37,6 +39,10 @@ export class Main {
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("submit").addEventListener("submit",this.enviarDatos.bind(this),false)
+        console.log(document.getElementById("linkAutores"))
+        console.log(document.getElementById("linkFormulario"))
+        console.log(document.getElementById("submit"))
+        console.log("Entre main js")
      
     }                
     desplegar(oEv) {
@@ -56,8 +62,8 @@ export class Main {
      enviarDatos(oEv){
         //var nRe = RegExp('(a-zA-Z)')
         
-         var nombre =   document.getElementById("nombre").value;
-         var email =  document.getElementById("email").value;;
+         var nombre = document.getElementById("nombre").value;
+         var email = document.getElementById("email").value;;
          var experienciaDatos = document.querySelectorAll("experiencia").value;;
          var checkbox = document.getElementById("checkbox").value;;
          var opinionDatos = document.getElementById("coment").value;
@@ -72,21 +78,11 @@ export class Main {
          document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
-         
      }
-}
 
-document.querySelector("#botonMenu").addEventListener("click", desplegarMenu, false)
-//document.querySelector("#botonMenu").addEventListener('blur', desplegarMenu, false)
-
-function desplegarMenu() {
-    document.querySelector("#menu_movil").classList.toggle("oculto")
-    /* if(document.querySelector("#menu_movil").classList !== null && document.querySelector("#menu_movil").classList.contains("oculto")){
-        document.querySelector("#menu_movil").classList.remove("oculto")
+     desplegarMenu() {
+        document.querySelector("#menu_movil").classList.toggle("oculto")
     }
-    else {
-        document.querySelector("#menu_movil").classList.add("oculto")
-    } */
-    /* document.querySelector(".a").style.visibility = visible;
-    console.log(document.querySelector(".a").style) */
 }
+
+

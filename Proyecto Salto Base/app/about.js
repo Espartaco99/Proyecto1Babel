@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded',() => prueba(),false) 
+document.addEventListener('DOMContentLoaded',() => prueba(),false)
+
 function prueba(){
    document.getElementById("linkAutores").addEventListener("click",desplegar,false)
    document.getElementById("linkFormulario").addEventListener("click",desplegar,false)
    document.getElementById("submit").addEventListener("click",enviarDatos,false)
+   console.log("Entre about js")
 
 }
 function desplegar(oEv) {
