@@ -66,8 +66,6 @@ export class Main {
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
          document.getElementById("autores_container").classList.toggle("oculto")
-         document.querySelector("#autores").classList.toggle("oculto")
-         document.querySelector("#contacta").classList.toggle("oculto")
                }
          oEv.preventDefault()            
      }
@@ -82,7 +80,7 @@ export class Main {
                   var experienciaDatos = aRadio[i].value;
          }
          }
-        var checkbox = document.getElementById("checkbox").checked ? "SI" : "NO";		
+        var checkbox = document.getElementById("checkbox").checked ? "Si" : "No";		
         var opinionDatos = document.getElementById("coment").value;
         localStorage.setItem("nombre",  nombre)
         localStorage.setItem("email",  email)
@@ -90,12 +88,12 @@ export class Main {
         localStorage.setItem("opinion",  opinionDatos)
         localStorage.setItem("recibirNoticias",  checkbox)
         document.getElementById("datosEnviados").classList.toggle('oculto')
-         document.getElementById("formulario").classList.toggle('oculto')
-         document.getElementById("nombreDatos").innerHTML=` ${nombre}`
-         document.getElementById("emailDatos").innerHTML=` ${email}`
-         document.getElementById("experienciaDatos").innerHTML=` ${experienciaDatos}`
-         document.getElementById("opinionDatos").innerHTML=` ${opinionDatos}`
-         document.getElementById("checkboxDatos").innerHTML=` ${checkbox}`
+        document.getElementById("formulario").classList.toggle('oculto')
+        document.getElementById("nombreDatos").innerHTML=` ${nombre}`
+        document.getElementById("emailDatos").innerHTML=` ${email}`
+        document.getElementById("experienciaDatos").innerHTML=` ${experienciaDatos}`
+        document.getElementById("opinionDatos").innerHTML=` ${opinionDatos}`
+        document.getElementById("checkboxDatos").innerHTML=` ${checkbox}`
          
      }
      
