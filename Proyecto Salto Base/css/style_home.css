@@ -60,14 +60,16 @@ img{
     figure{    
         margin-top:3%;
         padding:3%
-      
     }
-
+    h2{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
     aside{
         display:block;
         width: 30%;
         float: right;
-        
+        margin-top: 44px;
     }
     aside iframe{
         width: 100%;
