@@ -75,13 +75,13 @@ export class Main {
         event.preventDefault();
          var nombre = document.getElementById("nombre").value;
          var email = document.getElementById("email").value;
-         var aRadio = document.getElementsByName("radio");
+         var aRadio = document.getElementsByName("experiencia");
          for(var i=0; i < aRadio.length; i++) {
              if (aRadio[i].checked) { 
                   var experienciaDatos = aRadio[i].value;
          }
          }
-        var checkbox = document.getElementById("checkbox").value;;
+        var checkbox = document.getElementById("checkbox").checked ? "SI" : "NO";		
         var opinionDatos = document.getElementById("coment").value;
         localStorage.setItem("nombre",  nombre)
         localStorage.setItem("email",  email)
