@@ -130,6 +130,10 @@ img {
     margin-bottom: 1%;
     text-align: center;
 }
+
+button, input[type='text'], input[type='email'], textarea{
+    border-radius: 5px;
+}
 @media screen and (max-width: 700px){
     header > button{
         width: auto;
