@@ -7,8 +7,11 @@ figure{
 }
 article{
     padding:2%;
-    border:solid 1px grey;
+  
     margin:3px
+}
+.autores{
+    border:solid 1px grey;
 }
 section{
     padding: 1%
