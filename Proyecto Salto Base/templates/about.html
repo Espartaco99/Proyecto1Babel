@@ -26,7 +26,7 @@
             <figure class="right">
                 <img src="./img/image_about_autor2.jpg" alt="Autor 1, Jesús Perucha" title="Autor 2, Jesús Perucha">
             </figure>
-        
+        </div>
         </article>
     </div>
 
@@ -34,32 +34,35 @@
 
     <div id="formulario" class="oculto">
             <h2 id="contacta" class="oculto">Contacta con nosotros</h2>
-            <form name="form_1" id="form_1" method="post" action="#"> 
+            <form name="form_1" id="form_1" method="post"> 
                 <ul>
-                    <li><label for="nombre">Nombre: <input id ="nombre" type="text" name="nombre" placeholder="Introduce tu nombre" required></label></li>
-                    <li><label for="email">Email:<input id="email" name="email" type="email" placeholder="Introduce tu email"></label></li>
+                    <li><label for="nombre">Nombre: <input id ="nombre"type="text" name="nombre" placeholder="Introduce tu nombre" required></label><label id="errorNombre" class="error oculto">Debe introducir su nombre</label></li>
+                    <li><label for="email">Email:<input id="email" name="email" type="email" placeholder="Introduce tu email"></label><label class="error oculto">Debe introducir su nombre</label></li>
                     <li><label>¿Cuanta experiencia tienes en deportes de riesgo?</label></li>
-                    <li><label for="radio_poco"><input type="radio" id="radio_poco" name="experiencia">Poco</label></li>
-                    <li><label for="radio_normal"><input type="radio" id="radio_normal" name="experiencia">Normal</label> </li>
-                    <li><label for="radio_mucho"><input type="radio" id="radio_mucho" name="experiencia">Mucho</label></li>
+                    <li> <label class="error oculto">Debe introducir su nombre</label></li>
+                    <li><label for="radio_poco"><input type="radio" id="radio_poco" name="experiencia" value="Poco">Poco</label></li>
+                    <li><label for="radio_normal"><input type="radio" id="radio_normal" name="experiencia" value="Normal">Normal</label> </li>
+                    <li><label for="radio_mucho"><input type="radio" id="radio_mucho" name="experiencia" value="Mucho">Mucho</label></li>
+                   
                     <li><label for="coment">Envianos tu opinión:</label></li>
                     <li><textarea id="coment" name="coment" placeholder="Escriba los comentarios que consideres oportunos"></textarea></li>
                     <li><label for="checkbox"><input type="checkbox" name="noticias" id="checkbox">Deseo recibir noticias y oportunidades sobre salto base.</label></li>         
                     
                 </ul>
-                <div class="center">
-                    <button id="submit" type="button">Enviar</button>
+                <div class="center">             
                     <button type="reset">Borrar</button>
+                    <button id="submit" type="submit">Enviar</button>
                 </div>
-            </form>
+           
     </div>
     <div id="datosEnviados" class="oculto">
-            <label id="nombreDatos">Nombre:</label>
-            <label id="emailDatos">Email:</label>
-            <label id="experienciaDatos">Experiencia en deportes de riesgo</label> 
-            <label id="opinionDatos">Envianos tu opinión:</label>
-            <label id="checkboxDatos">Deseo recibir noticias y oportunidad sobre salto base:</label>  
-            
+            <ul>
+                    <li> <label id="nombreDatos">Nombre:</label></li>
+                        <li> <label id="emailDatos">Email:</label></li>
+                            <li> <label id="experienciaDatos">Experiencia en deportes de riesgo</label> </li>
+                                <li> <label id="opinionDatos">Envianos tu opinión:</label></li>
+                                    <li> <label id="checkboxDatos">Deseo recibir noticias y oportunidad sobre salto base:</label>  </li>
+                                        <li> </ul>
     </div>
 
     <label class="center">

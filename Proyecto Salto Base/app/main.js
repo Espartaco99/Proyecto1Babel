@@ -31,14 +31,10 @@ export class Main {
         if(id === 'about')this.listenersAbout()
         
     }
-    ocultarMostrar(oEV){
-        console.log('HOLA ABOUT')
-        oEv.preventDefault()
-    }
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
-        document.getElementById("submit").addEventListener("submit",this.enviarDatos.bind(this),false)
+        document.getElementById("form_1").addEventListener("submit",this.enviarDatos.bind(this),false)
         console.log(document.getElementById("linkAutores"))
         console.log(document.getElementById("linkFormulario"))
         console.log(document.getElementById("submit"))
@@ -49,7 +45,6 @@ export class Main {
          document.getElementById("linkAutores").classList.toggle('desactivo')
          document.getElementById("linkFormulario").classList.toggle('desactivo')
          document.getElementById("formulario").classList.toggle("oculto")
-
          document.getElementById("autores_container").classList.toggle("oculto")
          document.querySelector("#autores").classList.toggle("oculto")
          document.querySelector("#contacta").classList.toggle("oculto")
@@ -61,15 +56,38 @@ export class Main {
      }
      enviarDatos(oEv){
         //var nRe = RegExp('(a-zA-Z)')
-        
-         var nombre = document.getElementById("nombre").value;
-         var email = document.getElementById("email").value;;
-         var experienciaDatos = document.querySelectorAll("experiencia").value;;
-         var checkbox = document.getElementById("checkbox").value;;
+        var expregNombre = /[A-Za-z]*/;
+        var expregEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;;
+        var aRadio = document.getElementsByName("radio");
+            for(var i=0; i < aRadio.length; i++) {
+                if (aRadio[i].checked) { 
+                     var experienciaDatos = aRadio[i].value;
+            }
+         }
+         var checkbox = document.getElementById("checkbox").checked ? "SI" : "NO";		
          var opinionDatos = document.getElementById("coment").value;
-         if(nombre.validity.valid)
-         if(email.validity.valid)
-         if(experienciaDatos.validity.valid)
+         var required = true
+         if(!expregNombre.test(nombre)){
+            document.getElementById("errorNombre").attributes
+             required = false
+         }
+         if(!expregEmail.test(email)){
+             console.log("email introducido")
+             required = false
+         }
+         if(!experienciaDatos){
+         }   console.log("experiencia introducido")
+         required = false
+         if(required){
+         localStorage.setItem("nombre",  nombre)
+         localStorage.setItem("email",  email)
+         localStorage.setItem("experiencia",  experienciaDatos)
+         localStorage.setItem("opinion",  opinionDatos)
+         localStorage.setItem("recibirNoticias",  checkbox)
+
+       
          oEv.preventDefault()
          document.getElementById("datosEnviados").classList.toggle('oculto')
          document.getElementById("formulario").classList.toggle('oculto')
@@ -78,7 +96,9 @@ export class Main {
          document.getElementById("experienciaDatos").innerHTML+=` ${experienciaDatos}`
          document.getElementById("opinionDatos").innerHTML+=` ${opinionDatos}`
          document.getElementById("checkboxDatos").innerHTML+=` ${checkbox}`
+         }
      }
+     
 
      desplegarMenu() {
         document.querySelector("#menu_movil").classList.toggle("oculto")
