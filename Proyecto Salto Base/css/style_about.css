@@ -46,13 +46,13 @@ div>label{
     text-align: center;
     padding: 1%;
 }
-form ul{
+div>ul, form>ul{
     border-width: 2px;
     border-style: groove;
     border-color: threedface;
     border-image: initial;
 }
-form ul li {
+div>ul>li, form ul li{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -66,6 +66,9 @@ li textarea{
 }
 div button:nth-of-type(2){
     margin-left: 5%;
+}
+li label:nth-of-type(1){
+    font-weight: bold;
 }
 
 @media screen and (min-width: 580px){
