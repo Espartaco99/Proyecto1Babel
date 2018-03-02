@@ -32,12 +32,11 @@ export class Main {
     ocultarMostrar(oEV){
         console.log('HOLA ABOUT')
         oEv.preventDefault()
-        //document.getElementById("autores_container").style.visibility="collapse"
     }
     listenersAbout(){
         document.getElementById("linkAutores").addEventListener("click",this.desplegar.bind(this),false)
         document.getElementById("linkFormulario").addEventListener("click",this.desplegar.bind(this),false)
-        document.getElementById("submit").addEventListener("click",this.enviarDatos.bind(this),false)
+        document.getElementById("submit").addEventListener("submit",this.enviarDatos.bind(this),false)
      
     }                
     desplegar(oEv) {
